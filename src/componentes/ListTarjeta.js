@@ -5,13 +5,12 @@ import Tarjeta from './Tarjeta'
 import '../style/style.css'
 
 
-const ListTarjeta = ({drincks, onDrinkSelect})=>{
-    const mostrarlista = drincks.map((drinck)=>{
-        return <Tarjeta onDrinkSelect={onDrinkSelect} drink={drinck}/>;
-    });
+const ListTarjeta = ({ drincks, onDrinkSelect }) => {
     return (
         <div className="cardList">
-            { mostrarlista}
+            {(drincks || []).map((drinck)=>{
+                return (<Tarjeta onDrinkSelect={onDrinkSelect} drink={drinck} />)
+            })}
         </div>
     );
 }
@@ -29,7 +28,7 @@ export default ListTarjeta;
 //         this.setState({ objDrink:props.drincks})
 //     }
 //     // componentWillMount(){
-        
+
 //     // }
 
 
